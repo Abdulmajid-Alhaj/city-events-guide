@@ -1,14 +1,21 @@
-// بيانات الترجمة
+// =============================================================================
+// City Events Guide - Main JavaScript File
+// Comprehensive JavaScript with English comments
+// Handles all dynamic functionality, translations, and user interactions
+// =============================================================================
+
+// ===== TRANSLATION DATA FOR BILINGUAL SUPPORT =====
+// Contains all text content in both Arabic and English
 const translations = {
     ar: {
-        // شريط التنقل
+        // Navigation
         home: "الرئيسية",
         events: "الفعاليات",
         about: "من نحن",
         contact: "اتصل بنا",
         language: "English",
 
-        // قسم البطل
+        // Hero Section
         heroTitle: "اكتشف عالم الفعاليات المثير في مدينتك",
         heroSubtitle: "انغمس في تجربة فريدة مع دليلنا الشامل لأهم الفعاليات الثقافية، الرياضية، والفنية. احجز تذكرتك الآن وكن جزءاً من اللحظات الاستثنائية.",
         browseEvents: "استعرض الفعاليات",
@@ -17,7 +24,7 @@ const translations = {
         activeUsers: "مستخدم نشط",
         eventOrganizers: "منظم فعاليات",
 
-        // قسم الفئات
+        // Categories Section
         categoriesTitle: "فئات الفعاليات",
         cultural: "ثقافية",
         entertainment: "ترفيهية",
@@ -28,20 +35,20 @@ const translations = {
         sportsDesc: "مسابقات، ماراثون، بطولات وأنشطة رياضية",
         educationalDesc: "ورش عمل، دورات تدريبية، مؤتمرات",
 
-        // قسم الفعاليات المميزة
+        // Featured Events Section
         featuredTitle: "الفعاليات المميزة",
         viewAll: "عرض الكل",
         free: "مجاني",
         details: "التفاصيل",
         book: "حجز",
 
-        // قسم الإحصائيات
+        // Statistics Section
         eventsCount: "فعالية",
         organizersCount: "منظم",
         participantsCount: "مشارك",
         citiesCount: "مدينة",
 
-        // التذييل
+        // Footer
         footerTitle: "دليل فعاليات المدينة",
         footerText: "منصة شاملة تتيح لك اكتشاف أفضل الفعاليات في مدينتك. نحن نعمل على جمع كل ما تحتاجه من معلومات حول الفعاليات القادمة في مكان واحد.",
         quickLinks: "روابط سريعة",
@@ -49,7 +56,7 @@ const translations = {
         contactUs: "اتصل بنا",
         rights: "جميع الحقوق محفوظة",
 
-        // صفحات أخرى
+        // Other Pages
         allEvents: "الفعاليات",
         discoverEvents: "اكتشف جميع الفعاليات القادمة في مدينتك. استخدم الفلاتر للعثور على الفعاليات التي تهمك.",
         ourStory: "قصتنا",
@@ -64,7 +71,7 @@ const translations = {
         send: "إرسال الرسالة",
         ourLocation: "موقعنا على الخريطة",
 
-        // نموذج الحجز
+        // Booking Form
         booking: "حجز تذكرة",
         eventName: "اسم الفعالية",
         ticketCount: "عدد التذاكر",
@@ -72,7 +79,7 @@ const translations = {
         confirmBooking: "تأكيد الحجز",
         bookingSuccess: "تم حجز التذاكر بنجاح!",
 
-        // عناصر عامة
+        // General Elements
         all: "الكل",
         similarEvents: "فعاليات مشابهة",
         noSimilarEvents: "لا توجد فعاليات مشابهة حالياً.",
@@ -162,7 +169,9 @@ const translations = {
     }
 };
 
-// بيانات الفعاليات
+// ===== EVENTS DATA - SAMPLE DATABASE =====
+// In a real application, this data would come from a backend API
+// Each event contains bilingual content for both Arabic and English
 const eventsData = [
     {
         id: 1,
@@ -181,7 +190,7 @@ const eventsData = [
             en: "City Theater"
         },
         price: 75,
-        image: "assets/img/events/concert.jpg",
+        image: "/assets/img/audience-1853662_1280.jpg",
         description: {
             ar: "استمتع بأمسية موسيقية رائعة مع أشهر الفنانين العالميين في حفلة لا تُنسى.",
             en: "Enjoy a wonderful musical evening with the most famous international artists in an unforgettable concert."
@@ -210,7 +219,7 @@ const eventsData = [
             en: "Culture Palace"
         },
         price: 25,
-        image: "assets/img/events/art-exhibition.jpg",
+        image: "/assets/img/events-carousel-15.jpg",
         description: {
             ar: "معرض يضم مجموعة متنوعة من الأعمال الفنية التشكيلية لفنانين محليين وعالميين.",
             en: "An exhibition featuring a variety of fine art works by local and international artists."
@@ -239,7 +248,7 @@ const eventsData = [
             en: "Waterfront"
         },
         price: 0,
-        image: "assets/img/events/marathon.jpg",
+        image: "/assets/img/gettyimages-1446478773-612x612.jpg",
         description: {
             ar: "انضم إلى آلاف المشاركين في ماراثون المدينة السنوي لمسافات مختلفة تناسب جميع المستويات.",
             en: "Join thousands of participants in the annual city marathon with different distances suitable for all levels."
@@ -268,7 +277,7 @@ const eventsData = [
             en: "International Conference Center"
         },
         price: 150,
-        image: "assets/img/events/tech-conference.jpg",
+        image: "/assets/img/iStock-901570896.jpg",
         description: {
             ar: "مؤتمر يضم خبراء التكنولوجيا والابتكار لمناقشة أحدث التطورات في المجال الرقمي.",
             en: "A conference featuring technology and innovation experts to discuss the latest developments in the digital field."
@@ -297,7 +306,7 @@ const eventsData = [
             en: "National Theater"
         },
         price: 60,
-        image: "assets/img/events/theater.jpg",
+        image: "/assets/img/pexels-wolfgang-1002140-2747449.jpg",
         description: {
             ar: "عرض مسرحي مميز يجمع بين الدراما والكوميديا في قصة تعكس واقع المجتمع المعاصر.",
             en: "A distinctive theatrical show combining drama and comedy in a story that reflects contemporary society."
@@ -326,7 +335,7 @@ const eventsData = [
             en: "Advanced Training Center"
         },
         price: 100,
-        image: "assets/img/events/digital-marketing.jpg",
+        image: "/assets/img/common-corporate-events.jpg",
         description: {
             ar: "ورشة عملية تقدم استراتيجيات فعالة للتسويق الرقمي وتحسين ظهور العلامات التجارية.",
             en: "A practical workshop offering effective strategies for digital marketing and improving brand visibility."
@@ -340,43 +349,45 @@ const eventsData = [
     }
 ];
 
-// إدارة شاشة التحميل والانتقال بين الصفحات
+// ===== PAGE TRANSITIONS AND LOADING SCREEN MANAGEMENT =====
+// Handles loading screen display and page transition effects
 function initPageTransitions() {
-    // إخفاء شاشة التحميل بعد تحميل الصفحة
+    // Hide loading screen after page is fully loaded
     window.addEventListener('load', function () {
         setTimeout(function () {
             const loadingScreen = document.getElementById('loading-screen');
             if (loadingScreen) {
+                // Add fade-out class to trigger CSS animation
                 loadingScreen.classList.add('fade-out');
 
-                // إزالة شاشة التحميل بعد انتهاء الرسوم المتحركة
+                // Remove loading screen from DOM after animation completes
                 setTimeout(function () {
                     loadingScreen.remove();
                     document.body.classList.add('page-loaded');
                 }, 500);
             }
-        }, 2000); // زيادة وقت التحميل ليشاهد المستخدم الشاشة
+        }, 2000); // Show loading screen for 2 seconds for better UX
     });
 
-    // إضافة تأثيرات النقر على جميع الأزرار
+    // Add click effects to all interactive elements
     document.querySelectorAll('.btn, .nav-link, .language-toggle, .dark-mode-toggle').forEach(element => {
         element.addEventListener('click', function (e) {
-            // إضافة تأثير النقر
+            // Add scale down effect on click for better feedback
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = '';
             }, 150);
 
-            // إذا كان رابط تنقل، إضافة تأثير انتقال
+            // Handle navigation links with smooth transitions
             if (this.classList.contains('nav-link') && this.getAttribute('href') && !this.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
 
-                // إضافة تأثير الخروج
+                // Add page transition effect before navigation
                 document.body.classList.remove('page-loaded');
                 document.body.classList.add('page-transition');
 
-                // الانتقال بعد تأثير الخروج
+                // Navigate after transition completes
                 setTimeout(() => {
                     window.location.href = href;
                 }, 300);
@@ -385,13 +396,18 @@ function initPageTransitions() {
     });
 }
 
-// تحديث التنقل النشط
+// ===== ACTIVE NAVIGATION MANAGEMENT =====
+// Updates the active state of navigation links based on current page
 function updateActiveNav() {
+    // Get current page filename
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Loop through all navigation links
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
+
+        // Check if this link corresponds to current page
         if (linkHref === currentPage ||
             (currentPage === '' && linkHref === 'index.html') ||
             (currentPage.includes(linkHref.replace('.html', '')) && linkHref !== 'index.html')) {
@@ -402,103 +418,92 @@ function updateActiveNav() {
     });
 }
 
-// تهيئة التطبيق عند تحميل الصفحة
+// ===== MAIN APPLICATION INITIALIZATION =====
+// Initializes all systems when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     initializeApp();
 });
 
 function initializeApp() {
-    // تهيئة نظام اللغة
-    initLanguageSystem();
+    // Initialize all core systems
+    initLanguageSystem();      // Language switching functionality
+    initDarkMode();            // Dark/light mode toggle
+    initCounters();            // Animated statistics counters
+    initScrollToTop();         // Scroll to top button
+    initNavbarOnScroll();      // Navbar behavior on scroll
+    initPageTransitions();     // Page transitions and loading screen
+    updateActiveNav();         // Active navigation highlighting
 
-    // تهيئة نظام وضع الظلام
-    initDarkMode();
-
-    // تهيئة الإحصائيات المتحركة
-    initCounters();
-
-    // تهيئة زر العودة للأعلى
-    initScrollToTop();
-
-    // تهيئة شريط التنقل عند التمرير
-    initNavbarOnScroll();
-
-    // تهيئة انتقالات الصفحة وشاشة التحميل
-    initPageTransitions();
-
-    // تحديث التنقل النشط
-    updateActiveNav();
-
-    // تحميل الفعاليات المميزة في الصفحة الرئيسية
+    // Initialize page-specific functionality based on current page
     if (document.getElementById('featuredEventsContainer')) {
-        loadFeaturedEvents();
+        loadFeaturedEvents();  // Homepage featured events
     }
 
-    // تحميل جميع الفعاليات في صفحة الفعاليات
     if (document.getElementById('eventsContainer')) {
-        loadAllEvents();
-        initEventFilters();
+        loadAllEvents();       // Events page - all events
+        initEventFilters();    // Events page - category filters
     }
 
-    // تحميل تفاصيل الفعالية في صفحة الفعالية الفردية
     if (document.getElementById('eventDetails')) {
-        loadEventDetails();
+        loadEventDetails();    // Individual event page
     }
 
-    // تهيئة نموذج الاتصال
     if (document.getElementById('contactForm')) {
-        initContactForm();
+        initContactForm();     // Contact page form
     }
 
-    // تهيئة نموذج الحجز
     if (document.getElementById('bookingForm')) {
-        initBookingForm();
+        initBookingForm();     // Booking modal form
     }
 }
 
-// تهيئة نظام اللغة
+// ===== LANGUAGE SYSTEM MANAGEMENT =====
+// Handles bilingual support and language switching
 function initLanguageSystem() {
-    // استخدام الأزرار الموجودة في HTML بدلاً من إنشاء جديدة
+    // Get all language toggle buttons
     const languageToggles = document.querySelectorAll('#languageToggle');
 
-    // إضافة مستمعي الأحداث لجميع أزرار اللغة
+    // Add click event listeners to all language toggle buttons
     languageToggles.forEach(toggle => {
         toggle.addEventListener('click', toggleLanguage);
     });
 
-    // التحقق من اللغة المحفوظة
+    // Get saved language preference or default to Arabic
     const savedLanguage = localStorage.getItem('language') || 'ar';
     setLanguage(savedLanguage);
 }
 
+// Toggle between Arabic and English languages
 function toggleLanguage() {
     const currentLanguage = document.documentElement.lang;
     const newLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
     setLanguage(newLanguage);
 }
 
+// Apply language settings to the entire page
 function setLanguage(language) {
-    // تحديث سمة اللغة في HTML
+    // Update HTML document attributes for language and text direction
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
 
-    // تحديث localStorage
+    // Save language preference to localStorage for persistence
     localStorage.setItem('language', language);
 
-    // تحديث واجهة المستخدم
+    // Update all UI elements with translated text
     updateUIForLanguage(language);
 
-    // تحديث نص زر اللغة
+    // Update language toggle button text
     updateLanguageButton(language);
 
-    // إعادة تحميل المحتوى الديناميكي
+    // Reload dynamic content that depends on language
     reloadDynamicContent();
 }
 
+// Update all translatable UI elements with current language
 function updateUIForLanguage(language) {
     const t = translations[language];
 
-    // تحديث عناصر واجهة المستخدم
+    // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (t[key]) {
@@ -506,7 +511,7 @@ function updateUIForLanguage(language) {
         }
     });
 
-    // تحديث عناصر النموذج
+    // Update form placeholders with translated text
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
         if (t[key]) {
@@ -514,7 +519,7 @@ function updateUIForLanguage(language) {
         }
     });
 
-    // تحديث عناصر العنوان
+    // Update element titles with translated text
     document.querySelectorAll('[data-i18n-title]').forEach(element => {
         const key = element.getAttribute('data-i18n-title');
         if (t[key]) {
@@ -523,6 +528,7 @@ function updateUIForLanguage(language) {
     });
 }
 
+// Update language toggle button text
 function updateLanguageButton(language) {
     const buttons = document.querySelectorAll('#languageToggle');
 
@@ -536,46 +542,48 @@ function updateLanguageButton(language) {
     });
 }
 
+// Reload dynamic content that depends on language
 function reloadDynamicContent() {
     const currentLanguage = document.documentElement.lang;
 
-    // إعادة تحميل الفعاليات المميزة
+    // Reload featured events with current language
     if (document.getElementById('featuredEventsContainer')) {
         loadFeaturedEvents();
     }
 
-    // إعادة تحميل جميع الفعاليات
+    // Reload all events with current language
     if (document.getElementById('eventsContainer')) {
         loadAllEvents();
     }
 
-    // إعادة تحميل تفاصيل الفعالية
+    // Reload event details with current language
     if (document.getElementById('eventDetails')) {
         loadEventDetails();
     }
 }
 
-// إدارة وضع الظلام
+// ===== DARK MODE FUNCTIONALITY =====
+// Handles dark/light mode switching and persistence
 function initDarkMode() {
-    // استخدام الأزرار الموجودة في HTML بدلاً من إنشاء جديدة
+    // Get all dark mode toggle buttons
     const darkModeToggles = document.querySelectorAll('#darkModeToggle');
 
-    // إضافة مستمعي الأحداث لجميع أزرار Dark Mode
+    // Add click event listeners to all dark mode toggle buttons
     darkModeToggles.forEach(toggle => {
         toggle.addEventListener('click', toggleDarkMode);
     });
 
-    // التحقق من التفضيل المحفوظ
+    // Check for saved dark mode preference
     if (localStorage.getItem('darkMode') === 'enabled') {
         enableDarkMode();
     }
-
-    // التحقق من تفضيل النظام
-    if (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // Check system preference if no user preference is saved
+    else if (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         enableDarkMode();
     }
 }
 
+// Toggle between dark and light modes
 function toggleDarkMode() {
     if (document.body.classList.contains('dark-mode')) {
         disableDarkMode();
@@ -584,57 +592,63 @@ function toggleDarkMode() {
     }
 }
 
+// Enable dark mode and update UI
 function enableDarkMode() {
     document.body.classList.add('dark-mode');
     localStorage.setItem('darkMode', 'enabled');
     updateDarkModeIcon(true);
 }
 
+// Disable dark mode and update UI
 function disableDarkMode() {
     document.body.classList.remove('dark-mode');
     localStorage.setItem('darkMode', 'disabled');
     updateDarkModeIcon(false);
 }
 
+// Update dark mode toggle icon based on current mode
 function updateDarkModeIcon(isDarkMode) {
     const icons = document.querySelectorAll('#darkModeToggle i');
 
     icons.forEach(icon => {
         if (icon) {
             if (isDarkMode) {
-                icon.className = 'fas fa-sun';
+                icon.className = 'fas fa-sun'; // Sun icon for dark mode
             } else {
-                icon.className = 'fas fa-moon';
+                icon.className = 'fas fa-moon'; // Moon icon for light mode
             }
         }
     });
 }
 
-// تهيئة العدادات المتحركة
+// ===== ANIMATED COUNTERS =====
+// Creates counting animation for statistics
 function initCounters() {
     const counters = document.querySelectorAll('.stat-number');
 
     counters.forEach(counter => {
+        // Get target number from data-count attribute
         const target = +counter.getAttribute('data-count');
-        const increment = target / 200;
+        const increment = target / 200; // Calculate increment for smooth animation
         let current = 0;
 
+        // Recursive function to update counter value
         const updateCounter = () => {
             if (current < target) {
                 current += increment;
                 counter.innerText = Math.ceil(current);
-                setTimeout(updateCounter, 10);
+                setTimeout(updateCounter, 10); // Continue animation
             } else {
-                counter.innerText = target;
+                counter.innerText = target; // Ensure exact target value
             }
         };
 
-        // تشغيل العدادات عندما تكون مرئية في الشاشة
+        // Use Intersection Observer to start animation when element is visible
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     updateCounter();
-                    observer.unobserve(entry.target);
+                    observer.unobserve(entry.target); // Stop observing after animation starts
                 }
             });
         });
@@ -643,11 +657,13 @@ function initCounters() {
     });
 }
 
-// تهيئة زر العودة للأعلى
+// ===== SCROLL TO TOP BUTTON =====
+// Handles show/hide and functionality of scroll to top button
 function initScrollToTop() {
     const scrollButton = document.getElementById('scrollToTop');
 
     if (scrollButton) {
+        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 scrollButton.classList.add('show');
@@ -656,6 +672,7 @@ function initScrollToTop() {
             }
         });
 
+        // Smooth scroll to top when button is clicked
         scrollButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -665,7 +682,8 @@ function initScrollToTop() {
     }
 }
 
-// تهيئة شريط التنقل عند التمرير
+// ===== NAVBAR SCROLL BEHAVIOR =====
+// Adds/removes scrolled class based on scroll position
 function initNavbarOnScroll() {
     const navbar = document.querySelector('.custom-navbar');
 
@@ -680,22 +698,28 @@ function initNavbarOnScroll() {
     }
 }
 
-// تحميل الفعاليات المميزة في الصفحة الرئيسية
+// ===== FEATURED EVENTS LOADING =====
+// Loads and displays featured events on homepage
 function loadFeaturedEvents() {
     const container = document.getElementById('featuredEventsContainer');
     const currentLanguage = document.documentElement.lang;
 
-    // عرض أول 3 فعاليات كفعاليات مميزة
+    // Get first 3 events as featured events
     const featuredEvents = eventsData.slice(0, 3);
 
+    // Clear container before adding new content
     container.innerHTML = '';
 
+    // Create and append event cards for each featured event
     featuredEvents.forEach(event => {
         const eventDate = new Date(event.date);
+
+        // Month names in both languages
         const monthNames = currentLanguage === 'ar' ?
             ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"] :
             ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+        // Create event card HTML with dynamic content
         const eventCard = `
             <div class="col-lg-4 col-md-6">
                 <div class="card event-card h-100">
@@ -727,19 +751,25 @@ function loadFeaturedEvents() {
     });
 }
 
-// تحميل جميع الفعاليات في صفحة الفعاليات
+// ===== ALL EVENTS LOADING =====
+// Loads and displays all events on events page
 function loadAllEvents() {
     const container = document.getElementById('eventsContainer');
     const currentLanguage = document.documentElement.lang;
 
+    // Clear container before adding new content
     container.innerHTML = '';
 
+    // Create and append event cards for all events
     eventsData.forEach(event => {
         const eventDate = new Date(event.date);
+
+        // Month names in both languages
         const monthNames = currentLanguage === 'ar' ?
             ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"] :
             ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+        // Create event card HTML with dynamic content
         const eventCard = `
             <div class="col-lg-4 col-md-6 mb-4" data-category="${event.category.en}">
                 <div class="card event-card h-100">
@@ -773,7 +803,7 @@ function loadAllEvents() {
         container.innerHTML += eventCard;
     });
 
-    // إضافة مستمعي الأحداث لأزرار الحجز
+    // Add event listeners to booking buttons
     document.querySelectorAll('.book-btn').forEach(button => {
         button.addEventListener('click', function () {
             const eventId = this.getAttribute('data-event-id');
@@ -782,25 +812,29 @@ function loadAllEvents() {
     });
 }
 
-// تهيئة مرشحات الفعاليات
+// ===== EVENT FILTERS INITIALIZATION =====
+// Handles category filtering on events page
 function initEventFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const eventsContainer = document.getElementById('eventsContainer');
     const currentLanguage = document.documentElement.lang;
 
+    // Add click event listeners to all filter buttons
     filterButtons.forEach(button => {
         button.addEventListener('click', function () {
-            // إزالة النشاط من جميع الأزرار
+            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
 
-            // إضافة النشاط للزر المختار
+            // Add active class to clicked button
             this.classList.add('active');
 
+            // Get filter category from data attribute
             const filter = this.getAttribute('data-filter');
 
-            // تصفية الفعاليات
+            // Get all event cards
             const eventCards = eventsContainer.querySelectorAll('.col-lg-4');
 
+            // Show/hide event cards based on filter
             eventCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.style.display = 'block';
@@ -812,23 +846,29 @@ function initEventFilters() {
     });
 }
 
-// تحميل تفاصيل الفعالية في صفحة الفعالية الفردية
+// ===== EVENT DETAILS PAGE =====
+// Loads and displays individual event details
 function loadEventDetails() {
+    // Get event ID from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('id');
     const currentLanguage = document.documentElement.lang;
 
     if (eventId) {
+        // Find event by ID
         const event = eventsData.find(e => e.id == eventId);
 
         if (event) {
             const eventDate = new Date(event.date);
+
+            // Month names in both languages
             const monthNames = currentLanguage === 'ar' ?
                 ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"] :
                 ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
             const eventDetails = document.getElementById('eventDetails');
 
+            // Create event details HTML with all event information
             eventDetails.innerHTML = `
                 <div class="row">
                     <div class="col-lg-8">
@@ -844,7 +884,7 @@ function loadEventDetails() {
                         
                         <h4 class="mt-5 mb-3">${translations[currentLanguage].similarEvents}</h4>
                         <div class="row" id="similarEvents">
-                            <!-- سيتم ملؤها بواسطة JavaScript -->
+                            <!-- Similar events will be loaded here by JavaScript -->
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -887,10 +927,10 @@ function loadEventDetails() {
                 </div>
             `;
 
-            // تحميل الفعاليات المشابهة
+            // Load similar events in the same category
             loadSimilarEvents(event.id, event.category.en);
 
-            // إضافة مستمعي الأحداث لأزرار الحجز والمشاركة
+            // Add event listeners to action buttons
             document.getElementById('bookEventBtn').addEventListener('click', function () {
                 openBookingModal(event.id);
             });
@@ -899,6 +939,7 @@ function loadEventDetails() {
                 shareEvent(event);
             });
         } else {
+            // Event not found - show error message
             const t = translations[currentLanguage];
             document.getElementById('eventDetails').innerHTML = `
                 <div class="alert alert-danger text-center">
@@ -909,6 +950,7 @@ function loadEventDetails() {
             `;
         }
     } else {
+        // Event ID missing - show warning message
         const t = translations[currentLanguage];
         document.getElementById('eventDetails').innerHTML = `
             <div class="alert alert-warning text-center">
@@ -920,23 +962,31 @@ function loadEventDetails() {
     }
 }
 
-// تحميل الفعاليات المشابهة
+// ===== SIMILAR EVENTS LOADING =====
+// Loads and displays events similar to the current event
 function loadSimilarEvents(currentEventId, category) {
     const similarEventsContainer = document.getElementById('similarEvents');
     const currentLanguage = document.documentElement.lang;
+
+    // Find events in the same category, excluding the current event
     const similarEvents = eventsData.filter(event =>
         event.id != currentEventId && event.category.en === category
-    ).slice(0, 3);
+    ).slice(0, 3); // Limit to 3 similar events
 
+    // Clear container before adding new content
     similarEventsContainer.innerHTML = '';
 
     if (similarEvents.length > 0) {
+        // Create and append similar event cards
         similarEvents.forEach(event => {
             const eventDate = new Date(event.date);
+
+            // Month names in both languages
             const monthNames = currentLanguage === 'ar' ?
                 ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"] :
                 ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+            // Create similar event card HTML
             const eventCard = `
                 <div class="col-md-4">
                     <div class="card h-100">
@@ -957,6 +1007,7 @@ function loadSimilarEvents(currentEventId, category) {
             similarEventsContainer.innerHTML += eventCard;
         });
     } else {
+        // No similar events found - show message
         similarEventsContainer.innerHTML = `
             <div class="col-12">
                 <p class="text-muted text-center">${translations[currentLanguage].noSimilarEvents}</p>
@@ -965,15 +1016,17 @@ function loadSimilarEvents(currentEventId, category) {
     }
 }
 
-// فتح نموذج الحجز
+// ===== BOOKING MODAL FUNCTIONALITY =====
+// Opens booking modal for a specific event
 function openBookingModal(eventId) {
     const event = eventsData.find(e => e.id == eventId);
     const currentLanguage = document.documentElement.lang;
 
     if (event) {
+        // Pre-fill event name in booking form
         document.getElementById('eventName').value = event.title[currentLanguage];
 
-        // تحديث نصوص النموذج بناءً على اللغة
+        // Update modal text based on current language
         document.querySelector('#bookingModal .modal-title').textContent = translations[currentLanguage].booking;
         document.querySelector('label[for="eventName"]').textContent = translations[currentLanguage].eventName;
         document.querySelector('label[for="ticketCount"]').textContent = translations[currentLanguage].ticketCount;
@@ -983,12 +1036,14 @@ function openBookingModal(eventId) {
         document.querySelector('.btn-secondary').textContent = translations[currentLanguage].cancel;
         document.querySelector('#confirmBooking').textContent = translations[currentLanguage].confirmBooking;
 
+        // Show booking modal using Bootstrap
         const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
         bookingModal.show();
     }
 }
 
-// تهيئة نموذج الحجز
+// ===== BOOKING FORM INITIALIZATION =====
+// Handles booking form submission and validation
 function initBookingForm() {
     document.getElementById('confirmBooking').addEventListener('click', function () {
         const form = document.getElementById('bookingForm');
@@ -999,52 +1054,61 @@ function initBookingForm() {
         const phone = document.getElementById('phone').value;
         const currentLanguage = document.documentElement.lang;
 
+        // Validate form before submission
         if (form.checkValidity()) {
-            // في التطبيق الحقيقي، هنا سيتم إرسال البيانات إلى الخادم
+            // In a real application, this data would be sent to a server
+            // For demo purposes, we'll just show a success message
+
+            // Hide booking modal
             const bookingModal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
             bookingModal.hide();
 
-            // عرض رسالة نجاح
+            // Show success message
             showAlert(translations[currentLanguage].bookingSuccess, 'success');
 
-            // إعادة تعيين النموذج
+            // Reset form for next use
             form.reset();
         } else {
+            // Show browser validation messages
             form.reportValidity();
         }
     });
 }
 
-// مشاركة الفعالية
+// ===== EVENT SHARING FUNCTIONALITY =====
+// Handles sharing events via Web Share API or fallback
 function shareEvent(event) {
     const currentLanguage = document.documentElement.lang;
 
+    // Check if Web Share API is supported
     if (navigator.share) {
+        // Use native share dialog
         navigator.share({
             title: event.title[currentLanguage],
             text: event.description[currentLanguage],
             url: window.location.href,
         })
-            .then(() => console.log('تمت المشاركة بنجاح'))
-            .catch((error) => console.log('خطأ في المشاركة:', error));
+            .then(() => console.log('Event shared successfully'))
+            .catch((error) => console.log('Error sharing event:', error));
     } else {
-        // نسخ الرابط إلى الحافظة
+        // Fallback: Copy link to clipboard
         navigator.clipboard.writeText(window.location.href)
             .then(() => {
                 showAlert(currentLanguage === 'ar' ? 'تم نسخ رابط الفعالية إلى الحافظة' : 'Event link copied to clipboard', 'info');
             })
             .catch(err => {
-                console.error('فشل في نسخ الرابط: ', err);
+                console.error('Failed to copy link: ', err);
             });
     }
 }
 
-// تهيئة نموذج الاتصال
+// ===== CONTACT FORM INITIALIZATION =====
+// Handles contact form submission and validation
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     const currentLanguage = document.documentElement.lang;
 
-    // تحديث نصوص النموذج بناءً على اللغة
+    // Update form labels based on current language
     if (contactForm) {
         document.querySelector('label[for="firstName"]').textContent = currentLanguage === 'ar' ? 'الاسم الأول' : 'First Name';
         document.querySelector('label[for="lastName"]').textContent = currentLanguage === 'ar' ? 'الاسم الأخير' : 'Last Name';
@@ -1053,7 +1117,7 @@ function initContactForm() {
         document.querySelector('label[for="subject"]').textContent = translations[currentLanguage].subject;
         document.querySelector('label[for="message"]').textContent = translations[currentLanguage].message;
 
-        // تحديث خيارات الموضوع
+        // Update subject options based on language
         const subjectSelect = document.getElementById('subject');
         if (subjectSelect) {
             subjectSelect.innerHTML = `
@@ -1067,25 +1131,35 @@ function initContactForm() {
             `;
         }
 
+        // Update submit button text
         document.querySelector('button[type="submit"]').textContent = translations[currentLanguage].send;
     }
 
+    // Handle form submission
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const currentLanguage = document.documentElement.lang;
 
+        // Validate form before submission
         if (this.checkValidity()) {
-            // في التطبيق الحقيقي، هنا سيتم إرسال البيانات إلى الخادم
+            // In a real application, this data would be sent to a server
+            // For demo purposes, we'll just show a success message
             showAlert(currentLanguage === 'ar' ? 'تم إرسال رسالتك بنجاح! سنقوم بالرد عليك في أقرب وقت ممكن.' : 'Your message has been sent successfully! We will respond to you as soon as possible.', 'success');
+
+            // Reset form for next use
             this.reset();
         } else {
+            // Show browser validation messages
             this.reportValidity();
         }
     });
 }
 
-// عرض رسالة تنبيه
+// ===== UTILITY FUNCTIONS =====
+
+// Display alert messages to user
 function showAlert(message, type) {
+    // Create alert element
     const alertDiv = document.createElement('div');
     alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
     alertDiv.innerHTML = `
@@ -1093,9 +1167,10 @@ function showAlert(message, type) {
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     `;
 
+    // Add alert to page
     document.body.appendChild(alertDiv);
 
-    // إزالة التنبيه تلقائياً بعد 5 ثوانٍ
+    // Auto-remove alert after 5 seconds
     setTimeout(() => {
         if (alertDiv.parentNode) {
             alertDiv.parentNode.removeChild(alertDiv);
